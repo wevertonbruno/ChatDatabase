@@ -7,7 +7,7 @@ const Conversation = connection.define('conversation', {
 })
 
 Conversation.findOrCreateConversation = function(user1Id, user2Id){
-     return Conversation.findOrCreateConversation({
+     return Conversation.findOrCreate({
          where: {
              user1Id: {
                  [Op.or]: [user1Id, user2Id]
