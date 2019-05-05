@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize')
-const connection = new Sequelize('chatdb', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql'
+const config = require('./config')
+const connection = new Sequelize(config.dbname, config.user, config.password, {
+    host: config.host,
+    dialect: config.dbtype
 })
 
 module.exports = connection
